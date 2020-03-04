@@ -19,7 +19,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-	// write your code here
+
 
         int spotCounter = 0;
         int numberHelper = 5;
@@ -68,14 +68,8 @@ public class Main {
             for (int x = 0; x < xLength; x++ ){
                 for (int y = 0; y < yLength; y++ ){
                     if(x<xLength   && y<yLength ){
-                        if(z==1){
-                            if(chechEmpyOne(x,y)) {
-                                spotCounter++;
-                                putSSpotLight(x, y);
-                                printMatrix();
 
-                            }
-                        } else if(check(x,y,z)){
+                            if(check(x,y,z)){
                             spotCounter++;
                             putSSpotLight(x,y);
                             printMatrix();
@@ -95,12 +89,6 @@ public class Main {
 
     }
 
-    private static boolean chechEmpyOne(int x, int y) {
-        if(file[y][x]==0){
-            return true;
-        }
-        return false;
-    }
 
     private static void printMatrix() {
         for (int i = 0; i < yLength; i++ ){
@@ -158,7 +146,9 @@ public class Main {
 
     private static boolean check(int x, int y,int count) {
         if(count==1){
-            return true;
+            if(file[y][x]==0){
+                return true;
+            }
         }
         int counter=0;
         for (int i = x-1; i <= x+1; i++ ){
