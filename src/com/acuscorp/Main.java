@@ -10,6 +10,38 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
+/**
+ * @class public class Main
+ * @brief this is an exercise to find how may spot light can be set in a house which is represented as a matrix, the 0 are the empty spaces and
+ *  1 are like walls. The spot light moves to x and y direction. I got this algorithm in this way
+ *  first: if we have something like this (as a base)
+ *      00,01,02
+ *      10,11,12
+ *      20,21,22
+ *
+ *      I think the best way to find the best position is checking if in the base the potions 01,10,11,12,21 has zeros (5 available positions  then it will be like this
+ *
+ *      0,2,0
+ *      2,2,2
+ *      0,2,0
+ *
+ *  Second: 4 available positions
+ *      1,2,0
+ *      0,0,0
+ *      0,0,0
+ *
+ *      the algorithm makes this
+ *      1,1,2
+ *      0,2,2
+ *      0,0,2
+ *      but after that it will fil the 0 spaces
+ *      1,1,2
+ *      2,2,2
+ *      0,0,2
+ *
+ *      then it'll find if there is 3 position available then 2 and at the en 1 position
+ *      if you run the code will print the steps.
+ */
 public class Main {
     private static int xLength;
     private static int yLength;
